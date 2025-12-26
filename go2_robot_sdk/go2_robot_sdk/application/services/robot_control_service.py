@@ -56,6 +56,10 @@ class RobotControlService:
                     self.controller.send_stand_up_command(robot_id)
                     logger.info(f"Stand up command sent to robot {robot_id}")
 
+                elif joy_buttons[2]:  # Balance stand
+                    self.controller.send_balance_stand_command(robot_id)
+                    logger.info(f"Balance stand command sent to robot {robot_id}")
+
         except Exception as e:
             logger.error(f"Error handling joy command: {e}")
 

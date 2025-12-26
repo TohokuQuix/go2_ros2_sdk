@@ -13,6 +13,11 @@ class IRobotController(ABC):
         pass
 
     @abstractmethod
+    def send_balance_stand_command(self, robot_id: str) -> None:
+        """Send balance stand command"""
+        pass
+
+    @abstractmethod
     def send_stand_up_command(self, robot_id: str) -> None:
         """Send stand up command"""
         pass

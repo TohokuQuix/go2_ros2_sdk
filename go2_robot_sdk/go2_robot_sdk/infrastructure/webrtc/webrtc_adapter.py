@@ -132,14 +132,25 @@ class WebRTCAdapter(IRobotDataReceiver, IRobotController):
         except Exception as e:
             logger.error(f"Error sending movement command: {e}")
 
+    def send_balance_stand_command(self, robot_id: str) -> None:
+        """Send balance stand command"""
+        try:
+            balance_stand_cmd = gen_command(ROBOT_CMD['BalanceStand'])
+            self.send_command(robot_id, balance_stand_cmd)
+            logger.info("Balance stand command sent")
+        except Exception as e:
+            logger.error(f"Error sending balance stand command: {e}")
+
     def send_stand_up_command(self, robot_id: str) -> None:
         """Send stand up command"""
         try:
             stand_up_cmd = gen_command(ROBOT_CMD["StandUp"])
             self.send_command(robot_id, stand_up_cmd)
+            logger.info("Stand up command sent")
             
             move_cmd = gen_command(ROBOT_CMD['BalanceStand'])
             self.send_command(robot_id, move_cmd)
+            logger.info("Balance stand command sent")
         except Exception as e:
             logger.error(f"Error sending stand up command: {e}")
 
