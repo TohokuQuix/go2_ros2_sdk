@@ -7,6 +7,7 @@ Panels:
         - /PointCloud21/Topic1
         - /LaserScan1
         - /LaserScan1/Topic1
+        - /Image1
         - /Image1/Topic1
         - /Map2
         - /Pose1
@@ -319,11 +320,11 @@ Visualization Manager:
       Name: Image
       Normalize Range: true
       Topic:
-        Depth: 5
+        Depth: 1
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /camera/image_raw
+        Value: /out/compressed
       Value: true
     - Alpha: 0.699999988079071
       Class: rviz_default_plugins/Map
@@ -417,7 +418,7 @@ Visualization Manager:
       Class: rviz_default_plugins/Map
       Color Scheme: costmap
       Draw Behind: false
-      Enabled: true
+      Enabled: false
       Name: Map
       Topic:
         Depth: 5
@@ -433,7 +434,7 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /global_costmap/costmap_updates
       Use Timestamp: false
-      Value: true
+      Value: false
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
