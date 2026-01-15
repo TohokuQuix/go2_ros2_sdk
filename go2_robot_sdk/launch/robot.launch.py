@@ -171,7 +171,8 @@ class Go2NodeFactory:
                 ],
                 parameters=[{
                     'target_frame': 'base_link',
-                    'max_height': 0.5
+                    'min_height': -0.1,
+                    'max_height': 0.1
                 }],
                 output='screen',
             )

@@ -45,7 +45,7 @@ bt_navigator:
     global_frame: odom
     robot_base_frame: base_link
     odom_topic: odom
-    bt_loop_duration: 10
+    bt_loop_duration: 3
     default_server_timeout: 20
     # 'default_nav_through_poses_bt_xml' and 'default_nav_to_pose_bt_xml' are use defaults:
     # nav2_bt_navigator/navigate_to_pose_w_replanning_and_recovery.xml
@@ -139,11 +139,11 @@ controller_server:
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: True
-      min_vel_x: 0.0
+      min_vel_x: -0.8
       min_vel_y: 0.0
-      max_vel_x: 3.0 #changed
+      max_vel_x: 0.8 #changed
       max_vel_y: 0.0
-      max_vel_theta: 3.0 #changed
+      max_vel_theta: 0.9 #changed
       min_speed_xy: 0.0
       max_speed_xy: 3.0 #changed
       min_speed_theta: 0.0
@@ -155,9 +155,9 @@ controller_server:
       decel_lim_x: -2.5
       decel_lim_y: -2.5
       decel_lim_theta: -3.2
-      vx_samples: 20
-      vy_samples: 20
-      vtheta_samples: 20
+      vx_samples: 10
+      vy_samples: 10
+      vtheta_samples: 5
       sim_time: 1.2 #changed
       linear_granularity: 0.05
       angular_granularity: 0.025
@@ -183,7 +183,7 @@ local_costmap:
     ros__parameters:
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: odom
+      global_frame: map
       robot_base_frame: base_link
       use_sim_time: False
       rolling_window: true
@@ -216,14 +216,14 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 1.0
-        inflation_radius: 0.25
+        inflation_radius: 0.1
 
 global_costmap:
   global_costmap:
     ros__parameters:
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: odom
+      global_frame: map
       robot_base_frame: base_link
       use_sim_time: False
       resolution: 0.05
@@ -258,8 +258,8 @@ global_costmap:
 
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 1.0
-        inflation_radius: 0.25
+        cost_scaling_factor: 0.1
+        inflation_radius: 0.5
 
 map_server:
   ros__parameters:
