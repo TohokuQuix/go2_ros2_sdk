@@ -418,7 +418,7 @@ Visualization Manager:
       Class: rviz_default_plugins/Map
       Color Scheme: costmap
       Draw Behind: false
-      Enabled: false
+      Enabled: true
       Name: Map
       Topic:
         Depth: 5
@@ -434,7 +434,7 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /global_costmap/costmap_updates
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
@@ -537,16 +537,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/XYOrbit
-      Distance: 14.663200378417969
+      Distance: 19.00452423095703
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.544623613357544
-        Y: -0.2294015884399414
-        Z: 1.0726775144576095e-05
+        X: 0.2896242141723633
+        Y: 1.8607358932495117
+        Z: 5.004729246138595e-06
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
